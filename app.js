@@ -1,11 +1,17 @@
+
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var indexRouter = require('./routes/index');
+require('./configs/db.config');  //Conectamos con la bbdd
+require('./configs/hbs.config');  //Registrar partials
+
+
+var sessionsRouter = require('./routes/signin.routes');
 var usersRouter = require('./routes/users');
+var indexRouter = requre('./routes/index')
 
 var app = express();
 
@@ -20,7 +26,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/users', usersRouter)
+app.use('/sessions', sessionsRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

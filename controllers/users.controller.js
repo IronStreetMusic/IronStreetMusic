@@ -8,3 +8,4 @@ module.exports.login = (req , res ,next) => {
 module.exports.signup = (req, res, next) => {
     res.render('signup');
 };
+

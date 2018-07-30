@@ -1,10 +1,15 @@
 
 const mongoose = require('mongoose');
-const userSchema = new mongoose.Schema({
+const baseOptions = {
+    discriminatorKey: 'itemtype',
+    collections: 'ironstreetmusic'
+};
+
+const baseSchema = new mongoose.Schema({
     name: {
-        type: String,
-        required: true
-    },
+            type: String,
+            required: true
+        },
     lastName: {
         type: String,
         required: true
@@ -21,10 +26,10 @@ const userSchema = new mongoose.Schema({
     },
     city: {
         type: String,
-        required: true
-    },
-    styles: {
-        type: Array,
+        default: 'Madrid',
         required: true
     }
-});
+}, { timestamps: true });
+
+const Base = mongoose.model('Base', baseSchema);
+module.exports = Base;

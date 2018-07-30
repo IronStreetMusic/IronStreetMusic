@@ -8,43 +8,43 @@
 </div>
 
 <div>
-    <form class="needs-validation" novalidate style="display:none" id="VIS" > 
+    <form class="needs-validation" action="/signup" novalidate style="display:none" id="VIS" method="POST"> 
         <div class="d-flex flex-column">
             <div class="col-md-4 mb-3">
                 <label for="validationCustom01">First name</label>
-                <input type="text" class="form-control" id="validationCustom01" placeholder="First name" value="Mark" required>
+                <input type="text" class="form-control" id="validationCustom01" name="name" placeholder="First name" value="Mark" required>
                 <div class="valid-feedback">
                     Looks good!
                 </div>
             </div>
             <div class="col-md-4 mb-3">
                 <label for="validationCustom02">Last name</label>
-                <input type="text" class="form-control" id="validationCustom02" placeholder="Last name" value="Otto" required>
+                <input type="text" class="form-control" id="validationCustom02" name="lastName" placeholder="Last name" value="Otto" required>
                 <div class="valid-feedback">
                     Looks good!
                 </div>
             </div>
             <div class="col-md-4 mb-3">
                 <label for="exampleInputEmail1">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp" placeholder="Enter email">
                 <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
             </div>
             <div class="col-md4 mb-3">
                 <label for="exampleInputPassword1">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="Password">
             </div>
         </div>
         <div class="d-flex flex-column">
             <div class="col-md-6 mb-3">
                 <label for="validationCustom03">City</label>
-                <input type="text" class="form-control" id="validationCustom03" placeholder="City" required>
+                <input type="text" class="form-control" id="validationCustom03" name="city" placeholder="City" required>
                 <div class="invalid-feedback">
                     Please provide a valid city.
                 </div>
             </div>
 
         </div>
-        <div class="d-flex flex-column">
+        {{!-- <div class="d-flex flex-column">
             <div class="form-check">
                 <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
                 <label class="form-check-label" for="invalidCheck">
@@ -54,7 +54,7 @@
                     You must agree before submitting.
                 </div>
             </div>
-        </div>
+        </div> --}}
         <div>
             <span class="badge badge-pill badge-primary" style="padding: 0.5em;font-size: 20px" >ROCK</span>
             <span class="badge badge-pill badge-secondary"style="padding: 0.5em;font-size: 20px">INDIE</span>
@@ -68,43 +68,43 @@
         <button class="btn btn-primary" type="submit">Submit form</button>
     </form>
 
-    <form class="needs-validation" novalidate style="display:none" id="VIP">
+    <form class="needs-validation" action="/signup" novalidate style="display:none" id="VIP" method="POST">
         <div class="d-flex flex-column">
             <div class="col-md-4 mb-3">
                 <label for="validationCustom01">First name</label>
-                <input type="text" class="form-control" id="validationCustom011" placeholder="First name" value="Mark" required>
+                <input type="text" class="form-control" id="validationCustom011" name="name" placeholder="First name" value="Mark" required>
                 <div class="valid-feedback">
                     Looks good!
                 </div>
             </div>
             <div class="col-md-4 mb-3">
                 <label for="validationCustom02">Last name</label>
-                <input type="text" class="form-control" id="validationCustom022" placeholder="Last name" value="Otto" required>
+                <input type="text" class="form-control" id="validationCustom022" name="lastName" placeholder="Last name" value="Otto" required>
                 <div class="valid-feedback">
                     Looks good!
                 </div>
             </div>
             <div class="col-md-4 mb-3">
                 <label for="exampleInputEmail1">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail11" aria-describedby="emailHelp" placeholder="Enter email">
+                <input type="email" class="form-control" id="exampleInputEmail11" name="email" aria-describedby="emailHelp" placeholder="Enter email">
                 <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
             </div>
             <div class="col-md4 mb-3">
                 <label for="exampleInputPassword1">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword11" placeholder="Password">
+                <input type="password" class="form-control" id="exampleInputPassword11" name="password" placeholder="Password">
             </div>
         </div>
         <div class="d-flex flex-column">
             <div class="col-md-6 mb-3">
                 <label for="validationCustom03">City</label>
-                <input type="text" class="form-control" id="validationCustom031" placeholder="City" required>
+                <input type="text" class="form-control" id="validationCustom031" name="city" placeholder="City" required>
                 <div class="invalid-feedback">
                     Please provide a valid city.
                 </div>
             </div>
     
         </div>
-        <div class="d-flex flex-column">
+        {{!-- <div class="d-flex flex-column">
             <div class="form-check">
                 <input class="form-check-input" type="checkbox" value="" id="invalidCheck1" required>
                 <label class="form-check-label" for="invalidCheck">
@@ -114,7 +114,7 @@
                     You must agree before submitting.
                 </div>
             </div>
-        </div>
+        </div> --}}
         <div>
             <span class="badge badge-pill badge-primary" style="padding: 0.5em;font-size: 20px">ROCK</span>
             <span class="badge badge-pill badge-secondary" style="padding: 0.5em;font-size: 20px">INDIE</span>

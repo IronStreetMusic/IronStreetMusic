@@ -9,7 +9,7 @@ require('./configs/db.config');  //Conectamos con la bbdd
 require('./configs/hbs.config');  //Registrar partials
 
 // Routes
-var usersRouter = require('./routes/usersRoutes');
+var usersRouter = require('./routes/users.routes');
 
 var app = express();
 

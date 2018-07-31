@@ -9,3 +9,10 @@ Web para encontrar conciertos callejeros
 `git add .`
 `git commit -m comment`
 `git push origin branch`
+
+
+##LISTADO DE COMANDOS
+
+`MONGOOSE`
+`show dbs muestra base de datos moongose'
+'use + base datos para acceder a ella'

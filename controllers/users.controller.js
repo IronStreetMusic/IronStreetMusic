@@ -1,3 +1,4 @@
+
 const createError = require('http-errors');
 const mongoose = require('mongoose');
 const User = require('../models/user.model');
@@ -5,9 +6,14 @@ const Artist = require('../models/artist.model');
 
 const mailer = require('../services/mailer.service');
 
+
+module.exports.login = (req, res, next) => {
+  res.render('index');
+};
+
 module.exports.create = (req, res, next) => {
   res.render('sessions/signup');
-}
+};
 
 module.exports.doCreate = (req, res, next) => {
   User.findOne({ email: req.body.email })
@@ -25,8 +31,8 @@ module.exports.doCreate = (req, res, next) => {
         }
         return user.save()
           .then(user => {
-            mailer.confirmSignUp(user);
-            res.redirect('/sessions/signup');
+            // mailer.confirmSignUp(user);
+            res.redirect('/');
           });
       }
     })
@@ -40,11 +46,12 @@ module.exports.doCreate = (req, res, next) => {
       } else {
         next(error);
       }
-    })
-}
+    });
+};
 
+// Esto es para confirmar por mail
 module.exports.confirm = (req, res, next) => {
-  const token = req.query.token
+  const token = req.query.token;
 
   User.findOne({ token: token, active: false })
     .then(async (user) => {

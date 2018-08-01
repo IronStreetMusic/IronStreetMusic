@@ -1,1 +1,14 @@
-Profile View
+<div>
+    <nav class="navbar navbar-light bg-light sticky-top mb-5">
+        <span class="navbar-brand mb-0 h1">Artistas</span>
+    
+        {{#if currentUser}}
+        <small> {{ currentUser.email }}</small>
+        <form method="post" action="/sessions/delete">
+            <button type="submit" class="btn btn-sm btn-danger">Log out</button>
+        </form>
+        {{/if }}
+    </nav>
+   
+    <a class="btn btn-success mb-3" href="/events/create">Nuevo evento</a>
+</div>

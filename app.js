@@ -7,14 +7,20 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const passport = require('passport');
 
-require('./configs/db.config');  //Conectamos con la bbdd
-require('./configs/hbs.config');  //Registrar partials
-require('./configs/passport.config').setup(passport);  
-
 // Routes
 const usersRouter = require('./routes/users.routes');
+const sessionsRouter = require('./routes/sessions.routes');
+const profilesRouter = require('./routes/profiles.routes');
 
 const app = express();
+
+
+require('./configs/db.config'); //Conectamos con la bbdd
+require('./configs/hbs.config'); //Registrar partials
+require('./configs/passport.config').setup(passport);
+
+require('./configs/session.config')(app);
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -26,7 +32,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', usersRouter);
+app.use('/', sessionsRouter);
+app.use('/signup', usersRouter);
+app.use('/profile', profilesRouter);
 
 
 

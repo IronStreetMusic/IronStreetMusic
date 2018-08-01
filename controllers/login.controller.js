@@ -2,12 +2,12 @@
 const passport = require('passport');
 
 module.exports.create = (req, res, next) => {
-  res.render('sessions/signup');
+  res.render('index');
 }
 
 module.exports.doCreate = (req, res, next) => {
   function renderWithErrors(errors) {
-    res.status(400).render('sessions/signup', {
+    res.status(400).render('error', {
       user: req.body,
       errors: errors
     });
@@ -20,18 +20,21 @@ module.exports.doCreate = (req, res, next) => {
       email: email ? undefined : 'Email is required',
       password: password ? undefined : 'Password is required'
     });
-  } else {
+  } 
+  else {
     passport.authenticate('local-auth', (error, user, validation) => {
       if (error) {
         next(error);
       } else if (!user) {
         renderWithErrors(validation);
       } else {
+        // res.send("No ha ido bien 3")
         req.login(user, (error) => {
           if (error) {
             next(error)
           } else {
             res.send("Oh yeah!")
+            res.redirect('/signup')
           }
         });
       }

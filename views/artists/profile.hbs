@@ -3,10 +3,10 @@
         <span class="navbar-brand mb-0 h1">Artistas</span>
     
         {{#if currentUser}}
-        <small> {{ currentUser.email }}</small>
-        <form method="post" action="/sessions/delete">
-            <button type="submit" class="btn btn-sm btn-danger">Log out</button>
-        </form>
+            <small> {{ currentUser.email }}</small>
+            <form method="post" action="/delete">
+                <button type="submit" class="btn btn-sm btn-danger">Log out</button>
+            </form>
         {{/if }}
     </nav>
    

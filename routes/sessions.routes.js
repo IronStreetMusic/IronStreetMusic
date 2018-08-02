@@ -6,7 +6,8 @@ const sessionsController = require('../controllers/sessions.controller');
 const authMiddleware = require('../middlewares/auth.middleware.js')
 
 router.get('/', sessionsController.create);
+
 router.post('/', authMiddleware.userNotAuthenticated, sessionsController.doCreate);
-// router.post('/signup', usersController.signup);
+router.post('/delete', authMiddleware.authenticateUser, sessionsController.delete);
 
 module.exports = router;

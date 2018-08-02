@@ -55,7 +55,7 @@ module.exports.doCreate = (req, res, next) => {
 
 module.exports.delete = (req, res, next) => {
   req.session.destroy(() => {
-    res.redirect("/sessions/create");
+    res.redirect("/");
   });
 }
 

@@ -6,6 +6,17 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
       crossorigin="anonymous">
+    <link rel="stylesheet" href="https://js.arcgis.com/3.25/esri/css/esri.css">
+
+    <style>
+            #search {
+        display: block;
+        position: absolute;
+        z-index: 2;
+        top: 410px;
+        left: 74px;
+      }
+    </style>
 
   </head>
   
@@ -36,6 +47,7 @@
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+    <script src="https://js.arcgis.com/3.25/"></script>
     <script src="javascripts/main.js"></script>
     <script>
 
@@ -58,6 +70,46 @@
             document.getElementById("VIS").style.display = "none";
           }
         }
+
+        require([
+
+          "esri/map",
+          "esri/dijit/Search",
+          "dojo/on",
+          "dojo/domReady!"
+
+        ], function (Map, Search, on) {
+          var map = new Map("map", {
+            basemap: "gray",
+            center: [-120.435, 46.159], // lon, lat
+            zoom: 7
+          });
+
+          var search = new Search({
+            map: map
+          }, "search");
+          search.startup();
+
+          on(search, 'select-result', function (e) {
+            let address = e.result.feature.attributes.StAddr;
+            let city = e.result.feature.attributes.City
+            let x = e.result.feature.geometry.x;
+            let y = e.result.feature.geometry.y;
+
+
+            document.getElementById('address').value = address;
+            document.getElementById('city').value = city;
+          });
+
+        });
+
+        $(".form_datetime").datetimepicker({
+            format: "dd MM yyyy - hh:ii",
+            autoclose: true,
+            todayBtn: true,
+            startDate: "2013-02-14 10:00",
+            minuteStep: 10
+          });
 
     </script>
   </body>

@@ -16,8 +16,6 @@
     }, false);
 })();
 
-
-
 // function showFormVis(){
 //     if (document.getElementById("VIS").style.display==="none"){
 //         document.getElementById("VIS").style.display ="block";

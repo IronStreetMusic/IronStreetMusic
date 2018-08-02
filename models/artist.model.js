@@ -8,14 +8,17 @@ const artistSchema = new mongoose.Schema({
     default: 'Rock',
     required: true
   },
-  events: {
-    type: Array,
-    required: true
-  }
+
+  events: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Event'
+  }]
+
 }, { 
   timestamps: true,
   discriminatorKey: 'kind'
-});
+}
+);
     
 const Artist = User.discriminator('Artist', artistSchema);
 module.exports = Artist;

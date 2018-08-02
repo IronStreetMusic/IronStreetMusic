@@ -9,28 +9,17 @@
                 Looks good!
             </div>
         </div>
-        {{!-- <div class="col-md-4 mb-3">
-            <label for="validationCustom02">Hora</label>
-            <div class="input-append date form_datetime" data-date="2013-02-21T15:25:00Z">
-                <input size="16" type="text" value="" readonly>
-                <span class="add-on">
-                    <i class="icon-remove"></i>
-                </span>
-                <span class="add-on">
-                    <i class="icon-calendar"></i>
-                </span>
-            </div>            
-            <div class="valid-feedback">
-                Looks good!
-            </div>
-        </div> --}}
+
+        <div class="col-md-4 mb-3">
+            <input type="text" id="dtpicker" />
+        </div>
 
 
     </div>
     <div class="d-flex flex-column">
         <div class="col-md-6 mb-3">
             <label for="validationCustom03">Dirección</label>
-            <input type="text" class="form-control" id="address" placeholder="Calle..." name="address" required>
+            <input type="text" class="form-control" id="address" placeholder="Calle..." name="address" readonly>
             <div class="invalid-feedback">
                 Please provide a valid city.
             </div>
@@ -39,14 +28,14 @@
     <div class="d-flex flex-column">
         <div class="col-md-6 mb-3">
             <label for="validationCustom03">Ciudad</label>
-            <input type="text" class="form-control" id="city" placeholder="City" name="city" required>
+            <input type="text" class="form-control" id="city" placeholder="City" name="city" readonly>
             <div class="invalid-feedback">
                 Please provide a valid city.
             </div>
         </div>
     </div>
 
-    <div>
+    {{!-- <div>
         <span class="badge badge-pill badge-primary" style="padding: 0.5em;font-size: 20px">ROCK</span>
         <span class="badge badge-pill badge-secondary" style="padding: 0.5em;font-size: 20px">INDIE</span>
         <span class="badge badge-pill badge-success" style="padding: 0.5em;font-size: 20px">POP</span>
@@ -56,14 +45,18 @@
         <span class="badge badge-pill badge-info" style="padding: 0.5em;font-size: 20px">FLAMENCO</span> --}}
         <span class="badge badge-pill badge-light" style="padding: 0.5em;font-size: 20px">RAP</span>
         <span class="badge badge-pill badge-dark" style="padding: 0.5em;font-size: 20px">REGGAETON</span>
-    </div>
+    </div> --}}
+
+    <input type="checkbox" name="genre" value="Rock" />Rock
+    <input type="checkbox" name="genre" value="Techno" />Techno
+    <input type="checkbox" name="genre" value="Metal" />Metal
+    <input type="checkbox" name="genre" value="Prueba" />Prueba
 
     <div>
         <div id="map">
-                    <div id="search"></div>
-
+            <div id="search"></div>
         </div>
     </div>
 
-    <button class="btn btn-primary" type="submit">Submit form</button>
+    <button class="btn btn-primary" type="submit">Create event</button>
 </form>

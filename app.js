@@ -11,6 +11,7 @@ const passport = require('passport');
 const usersRouter = require('./routes/users.routes');
 const sessionsRouter = require('./routes/sessions.routes');
 const profilesRouter = require('./routes/profiles.routes');
+const eventsRouter = require('./routes/events.routes');
 
 const app = express();
 
@@ -35,6 +36,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', sessionsRouter);
 app.use('/signup', usersRouter);
 app.use('/profile', profilesRouter);
+app.use('/events', eventsRouter);
+
 
 
 

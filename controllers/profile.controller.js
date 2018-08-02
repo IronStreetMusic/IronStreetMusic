@@ -6,3 +6,7 @@ const User = require('../models/artist.model');
 module.exports.create = (req, res, next) => {
     res.render('artists/profile');
 }
+
+// module.exports.list = (req, res, next) => {
+
+// }

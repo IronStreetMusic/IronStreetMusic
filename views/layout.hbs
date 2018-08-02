@@ -10,6 +10,23 @@
   </head>
   
   <body>
+    
+    {{#if currentUser}}
+    <div>
+      <nav class="navbar navbar-light bg-light sticky-top mb-5">
+        <span class="navbar-brand mb-0 h1">Artistas</span>
+    
+        <small> {{ currentUser.email }}</small>
+        <form method="post" action="/delete">
+          <button type="submit" class="btn btn-sm btn-danger">Salir</button>
+        </form>
+        
+      </nav>
+    
+    </div>
+    {{/if }}
+
+
     {{{body}}}
 
 

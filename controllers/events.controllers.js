@@ -14,17 +14,19 @@ module.exports.doCreate = (req, res, next) => {
 
     let event = new Event({
         name: req.body.name,
-        // date: req.body.datetime,
+        //date: req.body.datetime,
         // street: req.body.address,
         // city: req.body.city,
-        // //   location ,
+        location: {
+            coordinates: [req.body.coorX, req.body.coorY]
+        },
         // //   musicStyles: ,
         artist: req.session.currentUser._id
     });
 
     event.save()
         .then((data) => {
-            res.redirect('/');
+            res.redirect('/profile');
         })
         .catch(error => {
             if (error instanceof mongoose.Error.ValidationError) {

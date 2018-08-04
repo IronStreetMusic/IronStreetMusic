@@ -1,11 +1,10 @@
-
 <form class="needs-validation" novalidate id="event" method="POST" action="/events/create">
     <input type="hidden" name='typè' value="artist" />
     <div class="d-flex flex-column">
         <div class="col-md-4 mb-3">
             <label for="validationCustom01">Nombre del evento</label>
             <input type="text" class="form-control" id="nameEvent" placeholder="Concierto en 
-            ..." value="Concierto en" name="name" required>
+            ..." value="{{event.name}}" name="name" required>
             <div class="valid-feedback">
                 Looks good!
             </div>
@@ -13,14 +12,14 @@
 
         <div class="col-md-4 mb-3">
             <label for="validationCustom02">Fecha</label>
-            <input type="text" id="dtpicker" name="datetime" />
+            <input type="text" id="dtpicker" name="datetime" value="{{event.date}}"/>
         </div>
 
     </div>
     <div class="d-flex flex-column">
         <div class="col-md-6 mb-3">
             <label for="validationCustom03">Dirección</label>
-            <input type="text" class="form-control" id="address" placeholder="Calle..." name="address" readonly>
+            <input type="text" class="form-control" id="address" placeholder="Calle..." name="address" value="{{event.street}}" readonly>
             <div class="invalid-feedback">
                 Please provide a valid city.
             </div>
@@ -29,7 +28,7 @@
     <div class="d-flex flex-column">
         <div class="col-md-6 mb-3">
             <label for="validationCustom04">Ciudad</label>
-            <input type="text" class="form-control" id="city" placeholder="City" name="city" readonly>
+            <input type="text" class="form-control" id="city" placeholder="City" name="city" value="{{event.city}}" readonly>
             <div class="invalid-feedback">
                 Please provide a valid city.
             </div>
@@ -45,7 +44,7 @@
 
     <div>
         <label>
-            <input type="checkbox" name="genre" value="Rock" />Rock
+            <input type="checkbox" name="genre" value="Rock" selected />Rock
             <span class="checkmark"></span>
         </label>
         <label>

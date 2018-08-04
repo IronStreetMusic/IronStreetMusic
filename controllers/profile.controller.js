@@ -25,8 +25,9 @@ module.exports.update = (req, res, next) => {
 
     Event.findById(id)
         .then(event => {
+            console.log("Event: " + event)
             if (event) {
-                res.render('events/event', {
+                res.render('events/editevent', {
                     event
                 });
             } else {

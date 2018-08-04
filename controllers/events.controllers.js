@@ -6,21 +6,19 @@ const Event = require('../models/event.model');
 
 module.exports.create = (req, res, next) => {
     res.render("events/event")
-}
+};
 
 module.exports.doCreate = (req, res, next) => {
-  // const id = req.body.events;
-  // console.log(req.session)
 
     let event = new Event({
         name: req.body.name,
-        //date: req.body.datetime,
-        // street: req.body.address,
-        // city: req.body.city,
+        date: new Date(req.body.datetime),
+        street: req.body.address,
+        city: req.body.city,
         location: {
-            coordinates: [req.body.coorX, req.body.coorY]
+            coordinates: [req.body.long, req.body.lat]
         },
-        // //   musicStyles: ,
+        musicStyles: req.body.genre,
         artist: req.session.currentUser._id
     });
 
@@ -34,7 +32,7 @@ module.exports.doCreate = (req, res, next) => {
             } else {
                 next(error);
             }
-        })
+        });
 
-  }
+};
 

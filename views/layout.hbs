@@ -84,10 +84,11 @@
 
           "esri/map",
           "esri/dijit/Search",
+          "esri/geometry/webMercatorUtils",
           "dojo/on",
           "dojo/domReady!"
 
-        ], function (Map, Search, on) {
+        ], function (Map, Search, webMercatorUtils, on) {
           var map = new Map("map", {
             basemap: "gray",
             center: [-120.435, 46.159], // lon, lat
@@ -102,14 +103,15 @@
           on(search, 'select-result', function (e) {
             let address = e.result.feature.attributes.StAddr;
             let city = e.result.feature.attributes.City
-            let x = e.result.feature.geometry.x;
-            let y = e.result.feature.geometry.y;
+            let value = webMercatorUtils.xyToLngLat(e.result.feature.geometry.x, e.result.feature.geometry.y, true);
 
+            let lng = value[0];
+            let lat = value[1];
 
             document.getElementById('address').value = address;
             document.getElementById('city').value = city;
-            document.getElementById('coorX').value = x;
-            document.getElementById('coorY').value = y;
+            document.getElementById('long').value = lng;
+            document.getElementById('lat').value = lat;
           });
 
         });

@@ -7,10 +7,10 @@ module.exports = mongoose.model('Event', new mongoose.Schema({
         type: String,
         required: false
     },
-    // date: {
-    //     type: Date,
-    //     required: false
-    // },  
+    date: {
+        type: Date,
+        required: false
+    },  
     street: {
         type: String,
         required: false
@@ -32,8 +32,8 @@ module.exports = mongoose.model('Event', new mongoose.Schema({
     },
     musicStyles: {
         type: Array,
-        required: true,
-        default: ['rock']
+        required: true
+        // default: ['rock']
     }, 
 
     artist: {

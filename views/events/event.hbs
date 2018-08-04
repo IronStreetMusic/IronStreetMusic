@@ -11,6 +11,7 @@
         </div>
 
         <div class="col-md-4 mb-3">
+            <label for="validationCustom02">Fecha</label>
             <input type="text" id="dtpicker" name="datetime"/>
         </div>
 
@@ -27,7 +28,7 @@
     </div>
     <div class="d-flex flex-column">
         <div class="col-md-6 mb-3">
-            <label for="validationCustom03">Ciudad</label>
+            <label for="validationCustom04">Ciudad</label>
             <input type="text" class="form-control" id="city" placeholder="City" name="city" readonly>
             <div class="invalid-feedback">
                 Please provide a valid city.
@@ -36,28 +37,56 @@
     </div>
 
     <div>
-        <input type="text" name="coorX" id="coorX" style="display:none">
+        <input type="text" name="long" id="long" style="display:none">
     </div>
     <div>
-        <input type="text" name="coorY" id="coorY" style="display:none">
+        <input type="text" name="lat" id="lat" style="display:none">
     </div>
 
     {{!-- <div>
         <span class="badge badge-pill badge-primary" style="padding: 0.5em;font-size: 20px">ROCK</span>
         <span class="badge badge-pill badge-secondary" style="padding: 0.5em;font-size: 20px">INDIE</span>
         <span class="badge badge-pill badge-success" style="padding: 0.5em;font-size: 20px">POP</span>
-        {{!--
+        
         <span class="badge badge-pill badge-danger" style="padding: 0.5em;font-size: 20px">ELECTRO</span>
         <span class="badge badge-pill badge-warning" style="padding: 0.5em;font-size: 20px">CLASSIC</span>
-        <span class="badge badge-pill badge-info" style="padding: 0.5em;font-size: 20px">FLAMENCO</span> --}}
+        <span class="badge badge-pill badge-info" style="padding: 0.5em;font-size: 20px">FLAMENCO</span> 
         <span class="badge badge-pill badge-light" style="padding: 0.5em;font-size: 20px">RAP</span>
         <span class="badge badge-pill badge-dark" style="padding: 0.5em;font-size: 20px">REGGAETON</span>
     </div> --}}
 
-    <input type="checkbox" name="genre" value="Rock" />Rock
-    <input type="checkbox" name="genre" value="Techno" />Techno
-    <input type="checkbox" name="genre" value="Metal" />Metal
-    <input type="checkbox" name="genre" value="Prueba" />Prueba
+    <label>
+        <input type="checkbox" name="genre" value="Rock" />Rock
+        <span class="checkmark"></span>
+    </label>
+    <label>
+        <input type="checkbox" name="genre" value="Techno" />Techno
+        <span class="checkmark"></span>
+    </label>
+    <label>
+        <input type="checkbox" name="genre" value="Metal" />Metal
+        <span class="checkmark"></span>
+    </label>
+    <label>
+        <input type="checkbox" name="genre" value="Prueba" />Prueba
+        <span class="checkmark"></span>
+    </label>
+    <label>
+        <input type="checkbox" name="genre" value="Indie" />Indie
+        <span class="checkmark"></span>
+    </label>
+    <label>
+        <input type="checkbox" name="genre" value="Pop" />Pop
+        <span class="checkmark"></span>
+    </label>
+    <label>
+        <input type="checkbox" name="genre" value="Classic" />Classic
+        <span class="checkmark"></span>
+    </label>
+    <label>
+        <input type="checkbox" name="genre" value="Flamenco" />Flamenco
+        <span class="checkmark"></span>
+    </label>
 
     <div>
         <div id="map">

@@ -2,3 +2,8 @@
 <div>
     <a class="btn btn-success mb-3" href="/events/create">Nuevo evento</a>
 </div>
+
+{{# each events as |event| }} 
+    {{> profileartist/detailevent event }}
+{{/each }}
+

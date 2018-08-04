@@ -1,0 +1,26 @@
+
+<div class="card mb-4">
+    <div class="card-body">
+        <h5 class="card-title">
+            {{ this.name }}
+        </h5>
+
+        <h6 class="card-subtitle mb-2 text-muted">
+            {{ this.occupation }}
+        </h6>
+
+        <p class="card-text">
+            {{ this.catchPhrase }}
+        </p>
+
+        <a href="/profileartist/{{ this.id }}/update" class="card-link text-warning">Edit</a>
+
+        <hr>
+
+        <form action="/profile/{{ this.id }}/delete" method="post">
+            <button type="submit" class="btn btn-sm btn-outline-danger" data-confirm="Are you sure?">
+                Delete
+            </button>
+        </form>
+    </div>
+</div>

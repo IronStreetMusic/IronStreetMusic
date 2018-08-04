@@ -8,6 +8,7 @@ const authMiddleware = require('../middlewares/auth.middleware.js')
 router.get('/', sessionsController.create);
 
 router.post('/', authMiddleware.userNotAuthenticated, sessionsController.doCreate);
+// router.post('/', authMiddleware.authenticateUser, sessionsController.doCreate);
 router.post('/delete', authMiddleware.authenticateUser, sessionsController.delete);
 
 module.exports = router;

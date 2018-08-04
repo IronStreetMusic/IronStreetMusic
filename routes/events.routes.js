@@ -8,7 +8,6 @@ router.get('/create', authMiddleware.authenticateUser, eventsController.create);
 
 router.post(
     '/create',
-    authMiddleware.authenticateUser,
     eventsController.doCreate
 );
 

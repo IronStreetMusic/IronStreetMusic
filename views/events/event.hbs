@@ -1,4 +1,4 @@
-<form class="needs-validation" novalidate id="event" method="POST" action="/signup">
+<form class="needs-validation" novalidate id="event" method="POST" action="/events/create">
     <input type="hidden" name='typè' value="artist" />
     <div class="d-flex flex-column">
         <div class="col-md-4 mb-3">
@@ -11,7 +11,7 @@
         </div>
 
         <div class="col-md-4 mb-3">
-            <input type="text" id="dtpicker" />
+            <input type="text" id="dtpicker" name="datetime"/>
         </div>
 
 
@@ -33,6 +33,13 @@
                 Please provide a valid city.
             </div>
         </div>
+    </div>
+
+    <div>
+        <input type="text" name="coorX" id="coorX" style="display:none">
+    </div>
+    <div>
+        <input type="text" name="coorY" id="coorY" style="display:none">
     </div>
 
     {{!-- <div>

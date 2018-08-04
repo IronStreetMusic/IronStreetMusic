@@ -1,18 +1,43 @@
 
 const mongoose = require('mongoose');
+const Artist = require('../models/artist.model')
 
 module.exports = mongoose.model('Event', new mongoose.Schema({
-    nameEvent: {
+    name: {
         type: String,
-        required: 'Name event is required'
     },
-    text: {
+    date: {
+        type: Date,
+        required: true
+    },  
+    street: {
         type: String,
-        required: 'Comment is required'
+        required: true
     },
-    celebrity: {
+    city: {
+        type: String,
+        required: true
+    },
+    // location: {
+    //     type: {
+    //         type: String, // Don't do `{ location: { type: String } }`
+    //         enum: ['Point'], // 'location.type' must be 'Point'
+    //         required: true
+    //     },
+    //     coordinates: {
+    //         type: [Number],
+    //         required: true
+    //     }
+    // },
+    musicStyles: {
+        type: Array,
+        required: true,
+        default: ['rock']
+    }, 
+
+    artist: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Celebrity',
+        ref: 'Artist',
         required: true
     }
 }, {

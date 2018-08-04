@@ -1,0 +1,88 @@
+
+<form class="needs-validation" novalidate id="event" method="POST" action="/events/create">
+    <input type="hidden" name='typè' value="artist" />
+    <div class="d-flex flex-column">
+        <div class="col-md-4 mb-3">
+            <label for="validationCustom01">Nombre del evento</label>
+            <input type="text" class="form-control" id="nameEvent" placeholder="Concierto en 
+            ..." value="Concierto en" name="name" required>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <label for="validationCustom02">Fecha</label>
+            <input type="text" id="dtpicker" name="datetime" />
+        </div>
+
+    </div>
+    <div class="d-flex flex-column">
+        <div class="col-md-6 mb-3">
+            <label for="validationCustom03">Dirección</label>
+            <input type="text" class="form-control" id="address" placeholder="Calle..." name="address" readonly>
+            <div class="invalid-feedback">
+                Please provide a valid city.
+            </div>
+        </div>
+    </div>
+    <div class="d-flex flex-column">
+        <div class="col-md-6 mb-3">
+            <label for="validationCustom04">Ciudad</label>
+            <input type="text" class="form-control" id="city" placeholder="City" name="city" readonly>
+            <div class="invalid-feedback">
+                Please provide a valid city.
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <input type="text" name="long" id="long" style="display:none">
+    </div>
+    <div>
+        <input type="text" name="lat" id="lat" style="display:none">
+    </div>
+
+    <div>
+        <label>
+            <input type="checkbox" name="genre" value="Rock" />Rock
+            <span class="checkmark"></span>
+        </label>
+        <label>
+            <input type="checkbox" name="genre" value="Techno" />Techno
+            <span class="checkmark"></span>
+        </label>
+        <label>
+            <input type="checkbox" name="genre" value="Metal" />Metal
+            <span class="checkmark"></span>
+        </label>
+        <label>
+            <input type="checkbox" name="genre" value="Prueba" />Prueba
+            <span class="checkmark"></span>
+        </label>
+        <label>
+            <input type="checkbox" name="genre" value="Indie" />Indie
+            <span class="checkmark"></span>
+        </label>
+        <label>
+            <input type="checkbox" name="genre" value="Pop" />Pop
+            <span class="checkmark"></span>
+        </label>
+        <label>
+            <input type="checkbox" name="genre" value="Classic" />Classic
+            <span class="checkmark"></span>
+        </label>
+        <label>
+            <input type="checkbox" name="genre" value="Flamenco" />Flamenco
+            <span class="checkmark"></span>
+        </label>
+    </div>
+
+    <div>
+        <div id="map">
+            <div id="search"></div>
+        </div>
+    </div>
+
+    <button class="btn btn-primary" type="submit">Create event</button>
+</form>

@@ -10,6 +10,8 @@ router.get('/', authMiddleware.authenticateUser, profileController.create);
 router.get('/id/delete', profileController.warnUser);
 router.post('/:id/delete', profileController.delete);
 
+router.get('/:id/update', profileController.update);
+
 // router.get(
 //     '/',
 //     authMiddleware.authenticateUser,

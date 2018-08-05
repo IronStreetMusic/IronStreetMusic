@@ -13,14 +13,17 @@
             {{ this.catchPhrase }}
         </p>
 
-        <a href="/profile/{{ this.id }}/update" class="card-link text-warning">Edit</a>
+        {{#if currentUser.kind}}
+            <a href="/profile/{{ this.id }}/update" class="card-link text-warning">Edit</a>
 
-        <hr>
+            <hr>
 
-        <form action="/profile/{{ this.id }}/delete" method="post">
-            <button type="submit" class="btn btn-sm btn-outline-danger" data-confirm="Are you sure?">
-                Delete
-            </button>
-        </form>
+            <form action="/profile/{{ this.id }}/delete" method="post">
+                <button type="submit" class="btn btn-sm btn-outline-danger" data-confirm="Are you sure?">
+                    Delete
+                </button>
+            </form>
+        {{/if }}
+
     </div>
 </div>

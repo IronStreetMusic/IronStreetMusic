@@ -5,7 +5,13 @@ const User = require('../models/user.model');
 const Event = require('../models/event.model');
 
 module.exports.create = (req, res, next) => {
-    Event.find()
+    let styles = req.session.currentUser.stylePreferences;
+
+    Event.find({
+        musicStyles: {
+            $in: [ styles ]
+        }
+    })
         .then(events => {
             res.render('profileuser/profile', {
                 events

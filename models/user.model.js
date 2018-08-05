@@ -38,6 +38,10 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: 'City is required'
   },
+  stylePreferences: {
+    type: Array,
+    required: true
+  }
 
 }, { 
   timestamps: true,

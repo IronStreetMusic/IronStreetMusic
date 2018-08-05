@@ -25,7 +25,14 @@ module.exports.doCreate = (req, res, next) => {
         });
       } else {
         if (req.body.type === 'user') {
-          user = new User(req.body);
+          user = new User({
+            name: req.body.name,
+            lastname: req.body.lastname,
+            email: req.body.email,
+            password: req.body.password,
+            city: req.body.city,
+            stylePreferences: req.body.genre2
+          })
         } else {
           user = new Artist(req.body);
         }

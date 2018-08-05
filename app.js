@@ -13,6 +13,7 @@ const usersRouter = require('./routes/users.routes');
 const sessionsRouter = require('./routes/sessions.routes');
 const profilesRouter = require('./routes/profiles.routes');
 const eventsRouter = require('./routes/events.routes');
+const profileuserRouter = require('./routes/profileuser.routes');
 
 const app = express();
 
@@ -56,6 +57,7 @@ app.use('/', sessionsRouter);
 app.use('/signup', usersRouter);
 app.use('/profile', profilesRouter);
 app.use('/events', eventsRouter);
+app.use('/profileuser', profileuserRouter);
 
 
 

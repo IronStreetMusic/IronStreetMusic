@@ -1,6 +1,7 @@
 const createError = require('http-errors');
 const mongoose = require('mongoose');
 const User = require('../models/artist.model');
+const User2 = require('../models/user.model');
 
 module.exports.create = (req, res, next) => {
   res.render('index');
@@ -24,13 +25,13 @@ module.exports.doCreate = (req, res, next) => {
       })
       .then((user) => {
         if (user) {
+          console.log("User 1: " + user)
           user.checkPassword(password)
             .then((match) => {
               if (match) {
-                req.session.currentUser = user;
-                res.redirect("/profile");
+                  req.session.currentUser = user;
+                  res.redirect("/profile");
               } else {
-                res.send("falla")
                 res.render("sessions/signup", {
                   user: new User(req.body),
                   errors: {
@@ -41,12 +42,29 @@ module.exports.doCreate = (req, res, next) => {
             })
             .catch(error => next(error));
         } else {
-          res.render("sessions/signup", {
-            user: new User(req.body),
-            errors: {
-              "email": "Does not exist"
+          User2.findOne({
+            email: email
+          })
+          .then((user) => {
+            if (user) {
+              user.checkPassword(password)
+                .then((match) => {
+                  if (match) {
+                    req.session.currentUser = user;
+                    res.redirect("/profileuser");
+                  }
+                })
+            }
+            else {
+              res.render("sessions/signup", {
+                user: new User(req.body),
+                errors: {
+                  "email": "Does not exist"
+                }
+              })
             }
           })
+          
         }
       })
       .catch(error => next(error))

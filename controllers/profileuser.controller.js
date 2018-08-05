@@ -5,7 +5,19 @@ const User = require('../models/user.model');
 const Event = require('../models/event.model');
 
 module.exports.create = (req, res, next) => {
-    res.render('profileuser/profile');
+    Event.find()
+        .then(events => {
+            res.render('profileuser/profile', {
+                events
+            });
+        })
+        .catch(error => {
+            next(error)
+        
+        })
+
+
+    // res.render('profileuser/profile');
     // Event.find({
     //         artist: req.session.currentUser._id
     //     })

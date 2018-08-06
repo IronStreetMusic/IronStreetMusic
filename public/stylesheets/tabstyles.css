@@ -160,7 +160,7 @@
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
-	font-size: 1em;
+	font-size: 2em;
 }
 
 .tabs-style-linetriangle nav li.tab-current a:after, 

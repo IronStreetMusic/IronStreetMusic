@@ -66,6 +66,8 @@
     <script src="https://js.arcgis.com/3.25/"></script>
     <script src="/javascripts/main.js"></script>
     <script src="/javascripts/showMapEvents.js"></script>
+    {{!-- <script src="/javascripts/cbpFWTabs.js"></script> --}}
+    {{!-- <script src="/javascripts/modernizr.custom.js"></script> --}}
     <script>
 
       window.dataLayer = window.dataLayer || [];
@@ -75,27 +77,25 @@
       gtag('config', 'UA-23581568-13');
 
       function showFormVis() {
-          if (document.getElementById("VIS").style.display === "none") {
-            document.getElementById("VIS").style.display = "block";
-            document.getElementById("VIP").style.display = "none";
-          }
+        if (document.getElementById('section-linetriangle-2').style.display === "none") {
+          document.getElementById('section-linetriangle-2').style.display = "block";
+          document.getElementById('section-linetriangle-1').style.display = "none";
         }
+      }
 
-        function showFormVip() {
-          if (document.getElementById("VIP").style.display === "none") {
-            document.getElementById("VIP").style.display = "block";
-            document.getElementById("VIS").style.display = "none";
-          }
+      function showFormVip() {
+        if (document.getElementById('section-linetriangle-1').style.display === "none") {
+          document.getElementById('section-linetriangle-1').style.display = "block";
+          document.getElementById('section-linetriangle-2').style.display = "none";
         }
+      }
 
         require([
-
           "esri/map",
           "esri/dijit/Search",
           "esri/geometry/webMercatorUtils",
           "dojo/on",
           "dojo/domReady!"
-
         ], function (Map, Search, webMercatorUtils, on) {
           var map = new Map("map", {
             basemap: "gray",

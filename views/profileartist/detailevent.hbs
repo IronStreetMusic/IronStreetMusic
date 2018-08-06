@@ -5,16 +5,19 @@
             {{ this.name }}
         </h5>
 
-        <h6 class="card-subtitle mb-2 text-muted">
-            {{ this.occupation }}
-        </h6>
 
-        <p class="card-text">
-            {{ this.catchPhrase }}
-        </p>
 
         <p>{{ this.kind }}</p>
 
+        {{!-- Esto sólo se mostraría para usuarios --}}
+        <form action="/event/{{ this._id }}/update" method="post">
+            <button type="submit" class="btn btn-sm btn-outline-danger" data-confirm="Are you sure?">
+                Asistir
+            </button>
+        </form>
+       
+
+        {{!-- Edit and buttons in profile artist --}}
         {{#if currentUser.kind}}
             <a href="/profile/{{ this.id }}/update" class="card-link text-warning">Edit</a>
 
@@ -25,6 +28,7 @@
                     Delete
                 </button>
             </form>
+
         {{/if }}
 
     </div>

@@ -40,6 +40,15 @@ module.exports = mongoose.model('Event', new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Artist',
         required: true
+    },
+    maxSpectators: {
+        type: Number,
+        required: true
+    },
+    totalSpectator: {
+        type: Number,
+        required: true,
+        default: 0
     }
 }, {
     timestamps: true

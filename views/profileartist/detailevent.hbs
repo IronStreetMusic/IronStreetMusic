@@ -13,6 +13,8 @@
             {{ this.catchPhrase }}
         </p>
 
+        <p>{{ this.kind }}</p>
+
         {{#if currentUser.kind}}
             <a href="/profile/{{ this.id }}/update" class="card-link text-warning">Edit</a>
 

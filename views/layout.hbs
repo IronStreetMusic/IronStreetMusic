@@ -36,14 +36,10 @@
     {{#if currentUser}}
     <div>
       <nav class="navbar navbar-light bg-light sticky-top mb-5">
-        {{#if currentUser.kind }}
-          <span class="navbar-brand mb-0 h1">Artistas</span>
-        {{else}}
-          <span class="navbar-brand mb-0 h1">Usuarios</span>
+        {{#if currentUser }}
+          <span class="navbar-brand mb-0 h1">{{ currentUser.name }} </span>
         {{/if }}
-        
-
-    
+         
         <small> {{ currentUser.email }}</small>
         <form method="post" action="/delete">
           <button type="submit" class="btn btn-sm btn-danger">Salir</button>

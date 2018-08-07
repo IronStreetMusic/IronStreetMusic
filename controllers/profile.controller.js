@@ -11,7 +11,7 @@ module.exports.create = (req, res, next) => {
         })
         .then(events => {
             res.render('profileartist/profile', {
-                events
+                events: events,
             });
         })
         .catch(error => {
@@ -27,7 +27,7 @@ module.exports.update = (req, res, next) => {
         .then(event => {
             if (event) {
                 res.render('events/editevent', {
-                    event
+                    event,
                 });
             } else {
                 next(createError(404, `event with id ${id} not found`));

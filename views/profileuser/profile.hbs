@@ -1,9 +1,12 @@
-{{# each events as |event| }} 
-    {{> profileartist/detailevent event }} 
+{{#each events as |event|}} 
+    {{> profileartist/detailevent event=event user=../user}} 
 {{/each }}
 
-{{!-- <div id="mapEvents">
-    <div id="search2"></div>
-</div> --}}
+<h1>{{user.kind}}</h1>
 
-{{!-- <script type="text/javascript" src="javascripts/showMapEvents.js"></script> --}}
+{{!-- {{# showEventsMap events}} --}}
+    <div id="mapEvents">
+        <div id="search2"></div>
+    </div>
+{{!-- {{/showEventsMap}} --}}
+{{!-- <script type="text/javascript" src="/javascripts/showMapEvents.js"></script> --}}

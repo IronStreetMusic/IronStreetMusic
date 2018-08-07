@@ -6,7 +6,7 @@ const Event = require('../models/event.model');
 
 module.exports.create = (req, res, next) => {
     let styles = req.session.currentUser.stylePreferences;
-    console.log("Preferencias del usuario Rock: " + styles)
+    //console.log("Preferencias del usuario Rock: " + styles)
 
     Event.find({
         musicStyles: {
@@ -14,14 +14,18 @@ module.exports.create = (req, res, next) => {
         }
     })
         .then(events => {
-            console.log("EVentos rock: "+ events)
+            //console.log("EVentos rock: "+ events)
+            let myUser = req.session.currentUser;
+
+            console.log(myUser);
+
             res.render('profileuser/profile', {
-                events
+                events: events,
+                user: myUser
             });
         })
         .catch(error => {
             next(error)
-        
         })
 
 

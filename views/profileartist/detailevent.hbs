@@ -2,49 +2,39 @@
 <div class="card mb-4">
     <div class="card-body">
         <h5 class="card-title">
-            {{ this.name }}
+            {{ event.name }} - {{ user.name }}
         </h5>
 
-
-
-        {{!-- <p>{{ this.kind }} {{!--</p> --}}
+        <input type="number" name="long" value={{ event.location.coordinates.[0] }}>
+        <input type="number" name="lat" value={{ event.location.coordinates.[1] }}>
+        {{!-- <p>{{ event.kind }} {{!--</p> --}}
 
         {{!-- Esto sólo se mostraría para usuarios --}}
         <div style="display: flex; justify-content: flex-start;" >
-            <form action="/events/{{ this._id }}/update" method="post">
-                {{#if (isMaxSpectator this.totalSpectator  this.maxSpectator) }}
+            <form action="/event/{{ event._id }}/update" method="post">
+                    {{#if user.kind }}
                     <button type="submit" class="btn btn-sm btn-outline-success" data-confirm="Are you sure?" disabled>
                         Asistir
                     </button>
-                {{else }}
+                    {{/if}}
 
-                    {{#if (isArtist this) }}
-                    <button type="submit" class="btn btn-sm btn-outline-success" data-confirm="Are you sure?">
-                            Asistir
-                    </button>
-                    {{/if }}    
-
-                {{/if }}
             </form>
             <div style="display: flex; align-items:center; padding-left: 15px;">
-                <div><h6> {{ this.totalSpectator }} / {{ this.maxSpectators }} </h6></div>
+                <div><h6> {{ event.totalSpectator }} / {{ event.maxSpectators }} </h6></div>
             </div>
         </div>
        
-
         {{!-- Edit and buttons in profile artist --}}
-        {{#if currentUser.kind}}
-            <a href="/profile/{{ this.id }}/update" class="card-link text-warning">Edit</a>
+            <a href="/profile/{{ event.id }}/update" class="card-link text-warning">Edit</a>
 
             <hr>
 
-            <form action="/profile/{{ this.id }}/delete" method="post">
+            <form action="/profile/{{ event.id }}/delete" method="post">
                 <button type="submit" class="btn btn-sm btn-outline-danger" data-confirm="Are you sure?">
                     Delete
                 </button>
             </form>
-
-        {{/if }}
-
+        
     </div>
 </div>
+

@@ -122,6 +122,17 @@
             document.getElementById('lat').value = lat;
           });
 
+          var map = new Map("mapEvents", {
+            basemap: "gray",
+            center: [-120.435, 46.159], // lon, lat
+            zoom: 7
+          });
+
+          var search = new Search({
+            map: map
+          }, "search2");
+          search.startup();
+
         });
 
     </script>

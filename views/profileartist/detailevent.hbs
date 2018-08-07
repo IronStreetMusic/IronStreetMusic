@@ -5,8 +5,8 @@
             {{ event.name }} - {{ user.name }}
         </h5>
 
-        <input type="number" name="long" value={{ event.location.coordinates.[0] }}>
-        <input type="number" name="lat" value={{ event.location.coordinates.[1] }}>
+        <input type="number" id="long1" name="long1" value={{ event.location.coordinates.[0] }}>
+        <input type="number" name="lat1" value={{ event.location.coordinates.[1] }}>
         {{!-- <p>{{ event.kind }} {{!--</p> --}}
 
         {{!-- Esto sólo se mostraría para usuarios --}}

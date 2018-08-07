@@ -13,13 +13,17 @@
         <div style="display: flex; justify-content: flex-start;" >
             <form action="/events/{{ this._id }}/update" method="post">
                 {{#if (isMaxSpectator this.totalSpectator  this.maxSpectator) }}
-                    <button type="submit" class="btn btn-sm btn-outline-success" data-confirm="Are you sure?">
+                    <button type="submit" class="btn btn-sm btn-outline-success" data-confirm="Are you sure?" disabled>
                         Asistir
                     </button>
                 {{else }}
-                <button type="submit" class="btn btn-sm btn-outline-success" data-confirm="Are you sure?" disabled>
-                        Asistir
+
+                    {{#if (isArtist this) }}
+                    <button type="submit" class="btn btn-sm btn-outline-success" data-confirm="Are you sure?">
+                            Asistir
                     </button>
+                    {{/if }}    
+
                 {{/if }}
             </form>
             <div style="display: flex; align-items:center; padding-left: 15px;">

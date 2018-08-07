@@ -7,14 +7,19 @@
 
 
 
-        {{!-- <p>{{ this.kind }}</p> --}}
+        {{!-- <p>{{ this.kind }} {{!--</p> --}}
 
         {{!-- Esto sólo se mostraría para usuarios --}}
-        <form action="/events/{{ this._id }}/update" method="post">
-            <button type="submit" class="btn btn-sm btn-outline-danger" data-confirm="Are you sure?">
-                Asistir
-            </button>
-        </form>
+        <div style="display: flex; justify-content: flex-start;" >
+            <form action="/events/{{ this._id }}/update" method="post">
+                <button type="submit" class="btn btn-sm btn-outline-success" data-confirm="Are you sure?">
+                    Asistir
+                </button>
+            </form>
+            <div style="display: flex; align-items:center; padding-left: 15px;">
+                <div><h6> {{ this.totalSpectator }} / {{ this.maxSpectators }} </h6></div>
+            </div>
+        </div>
        
 
         {{!-- Edit and buttons in profile artist --}}

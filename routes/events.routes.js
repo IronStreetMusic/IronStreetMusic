@@ -12,16 +12,16 @@ router.post(
     eventsController.doCreate
 );
 
-router.get(
-    '/:id/update',
-    authMiddleware.authenticateUser,
-    eventsController.update
-);
+// router.get(
+//     '/:id/update',
+//     authMiddleware.authenticateUser,
+//     eventsController.update
+// );
 
-router.post(
-    '/:id/update',
-    authMiddleware.authenticateUser,
-    eventsController.doUpdate
-);
+// router.post(
+//     '/:id/update',
+//     authMiddleware.authenticateUser,
+//     eventsController.doUpdate
+// );
 
 module.exports = router;

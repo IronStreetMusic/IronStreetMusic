@@ -12,9 +12,15 @@
         {{!-- Esto sólo se mostraría para usuarios --}}
         <div style="display: flex; justify-content: flex-start;" >
             <form action="/events/{{ this._id }}/update" method="post">
-                <button type="submit" class="btn btn-sm btn-outline-success" data-confirm="Are you sure?">
-                    Asistir
-                </button>
+                {{#if (isMaxSpectator this.totalSpectator  this.maxSpectator) }}
+                    <button type="submit" class="btn btn-sm btn-outline-success" data-confirm="Are you sure?">
+                        Asistir
+                    </button>
+                {{else }}
+                <button type="submit" class="btn btn-sm btn-outline-success" data-confirm="Are you sure?" disabled>
+                        Asistir
+                    </button>
+                {{/if }}
             </form>
             <div style="display: flex; align-items:center; padding-left: 15px;">
                 <div><h6> {{ this.totalSpectator }} / {{ this.maxSpectators }} </h6></div>

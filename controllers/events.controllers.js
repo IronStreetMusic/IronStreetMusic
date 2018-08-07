@@ -18,6 +18,7 @@ module.exports.doCreate = (req, res, next) => {
         location: {
             coordinates: [req.body.long, req.body.lat]
         },
+        maxSpectators: req.body.gauging,
         musicStyles: req.body.genre,
         artist: req.session.currentUser._id
     });
@@ -38,19 +39,17 @@ module.exports.doCreate = (req, res, next) => {
 
 module.exports.update = (req, res, next) => {
     console.log("Entra en el update")
-}
+};
 
 module.exports.doUpdate = (req, res, next) => {
-    console.log("Entra en el update");
     Event.findOneAndUpdate({
-        "_id": req.params._id
+        "_id": req.params.id
     }, {
         $inc: {
             "totalSpectator": 1
         }
     })
-        .then(() => {
-            console.log("Entra en el then");
+        .then((result) => {
             res.redirect('/profileuser')
         });
 };

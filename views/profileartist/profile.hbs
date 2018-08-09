@@ -4,6 +4,12 @@
 </div>
 
 {{# each events as |event| }} 
-    {{> profileartist/detailevent event }}
+    {{> profileartist/detailevent event=event user=../user }}
 {{/each }}
+
+<div id="mapArtist">
+    <div id="searchArtist"></div>
+</div>
+
+<script src="/javascripts/showMapArtist.js"></script>
 

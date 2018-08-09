@@ -5,26 +5,30 @@
             {{ event.name }} - {{ user.name }}
         </h5>
 
-        <input type="number" id="long1" name="long1" value={{ event.location.coordinates.[0] }}>
-        <input type="number" name="lat1" value={{ event.location.coordinates.[1] }}>
+        <input type="number" style="display:none" id="long1" name="long1" value={{ event.location.coordinates.[0] }}>
+        <input type="number" style="display:none" name="lat1" value={{ event.location.coordinates.[1] }}>
         {{!-- <p>{{ event.kind }} {{!--</p> --}}
 
         {{!-- Esto sólo se mostraría para usuarios --}}
         <div style="display: flex; justify-content: flex-start;" >
-            <form action="/event/{{ event._id }}/update" method="post">
-                    {{#if user.kind }}
+            {{#if user.kind }}
+
+            {{else }}
+                <form action="/event/{{ event._id }}/update" method="post">
                     <button type="submit" class="btn btn-sm btn-outline-success" data-confirm="Are you sure?" disabled>
                         Asistir
                     </button>
-                    {{/if}}
+                
+                </form>            
+            {{/if }}
 
-            </form>
             <div style="display: flex; align-items:center; padding-left: 15px;">
                 <div><h6> {{ event.totalSpectator }} / {{ event.maxSpectators }} </h6></div>
             </div>
         </div>
        
         {{!-- Edit and buttons in profile artist --}}
+        {{#if user.kind }}
             <a href="/profile/{{ event.id }}/update" class="card-link text-warning">Edit</a>
 
             <hr>
@@ -34,7 +38,8 @@
                     Delete
                 </button>
             </form>
-        
+        {{/if }}
+
     </div>
 </div>
 

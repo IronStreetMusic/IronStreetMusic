@@ -5,20 +5,21 @@ const User = require('../models/artist.model');
 const Event = require('../models/event.model');
 
 module.exports.create = (req, res, next) => {
-    //res.render('profileartist/profile');
-    Event.find({
+        Event.find({
             artist: req.session.currentUser._id
         })
         .then(events => {
+            let myUser = req.session.currentUser;
+
             res.render('profileartist/profile', {
                 events: events,
+                user: myUser
             });
         })
         .catch(error => {
             next(error);
         });
-    }
-
+    };
 
 module.exports.update = (req, res, next) => {
     const id = req.params.id;
@@ -34,7 +35,7 @@ module.exports.update = (req, res, next) => {
             }
         })
         .catch(error => next(error));
-}
+};
 
 module.exports.doUpdate = (req, res, next) => {
     const id = req.params.id;

@@ -53,7 +53,7 @@
 
     {{{body}}}
 
-    {{#if currentUser }}
+    {{#if currentUser.email }}
       <div id="map">
         <div id="search"></div>
       </div>
@@ -96,63 +96,9 @@
         // }
       }
 
-        require([
-          "esri/map",
-          "esri/dijit/Search",
-          "esri/geometry/webMercatorUtils",
-          "esri/symbols/SimpleMarkerSymbol",
-          "esri/graphic",
-          "esri/Color",
-          "esri/geometry/Point",
-          "dojo/on",
-          "dojo/domReady!"
-        ], function (Map, Search, webMercatorUtils, SimpleMarkerSymbol, Graphic, Color, Point, on) {
-          var map = new Map("map", {
-            basemap: "gray",
-            center: [-120.435, 46.159], // lon, lat
-            zoom: 7
-          });
 
-          var search = new Search({
-            map: map
-          }, "search");
-          search.startup();
-
-          on(search, 'select-result', function (e) {
-            let address = e.result.feature.attributes.StAddr;
-            let city = e.result.feature.attributes.City
-            let value = webMercatorUtils.xyToLngLat(e.result.feature.geometry.x, e.result.feature.geometry.y, true);
-
-            let lng = value[0];
-            let lat = value[1];
-
-            document.getElementById('address').value = address;
-            document.getElementById('city').value = city;
-            document.getElementById('long').value = lng;
-            document.getElementById('lat').value = lat;
-          });
-
-
-          let lats = document.getElementsByName('lat1');
-          let longs = document.getElementsByName('long1');
-          console.log("Latitudes: "  + lats)
-
-          var markerSymbol = new SimpleMarkerSymbol();
-          markerSymbol.setPath("M16,4.938c-7.732,0-14,4.701-14,10.5c0,1.981,0.741,3.833,2.016,5.414L2,25.272l5.613-1.44c2.339,1.316,5.237,2.106,8.387,2.106c7.732,0,14-4.701,14-10.5S23.732,4.938,16,4.938zM16.868,21.375h-1.969v-1.889h1.969V21.375zM16.772,18.094h-1.777l-0.176-8.083h2.113L16.772,18.094z");
-          markerSymbol.setColor(new Color("#00FFFF"));
-
-          on(map, "load", function (evt) {
-            console.log("Mapa: " + map)
-            for (var i = 0; i < lats.length; i++) {
-              map.graphics.add(new Graphic(new Point(longs[i], lats[i])), markerSymbol);
-            }
-          });
-
-
-        });
 
     </script>
-        {{!-- <script src="/javascripts/showMapEvents.js"></script> --}}
 
   </body>
 </html>

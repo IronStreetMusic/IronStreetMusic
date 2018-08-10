@@ -42,8 +42,6 @@ module.exports.update = (req, res, next) => {
 };
 
 module.exports.doUpdate = (req, res, next) => {
-    res.send("Añadir evento: " + req.params)
-    console.info("añadir evento: " + req.params)
     Event.findOneAndUpdate({
         "_id": req.params.id
     }, {

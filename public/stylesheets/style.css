@@ -1,13 +1,34 @@
 body {
   /* padding: 50px; */
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  widows: 100%;
+}
+
+#mapArtist, #mapUser {
+  /* height: 70%; */
+  height: 600px;
+  width: 50%;
+  margin: 0;
+  padding: 0;
+}
+
+#searchArtist, #searchUser {
+  display: block;
+  position: relative;
+  z-index: 2;
+  top: 60px;
+  left: 74px;
+}
+
+.events {
+  padding-top: 30px;
 }
 
       #search {
         display: block;
-        position: absolute;
+        position: relative;
         z-index: 2;
-        top: 20px;
+        top: 60px;
         left: 74px;
       }
 

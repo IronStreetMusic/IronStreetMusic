@@ -10,13 +10,14 @@
                 "esri/SpatialReference",
                 "esri/symbols/SimpleMarkerSymbol",
                 "esri/symbols/PictureMarkerSymbol",
+                "esri/InfoTemplate",
                 "esri/graphic",
                 "esri/Color",
                 "esri/geometry/Point",
                 "dojo/on",
                 "dojo/domReady!"
             ],
-            function (Map, Search, webMercatorUtils, SpatialReference, SimpleMarkerSymbol, PictureMarkerSymbol, Graphic, Color, Point, on) {
+            function (Map, Search, webMercatorUtils, SpatialReference, SimpleMarkerSymbol, PictureMarkerSymbol, InfoTemplate, Graphic, Color, Point, on) {
                 
                 const mapArtist = new Map("mapArtist", {
                     basemap: "gray",
@@ -46,9 +47,19 @@
                     for (var i = 0; i < lats.length; i++) {
                         let coorLong = parseFloat(longs[i].value);
                         let coorLat = parseFloat(lats[i].value);
-                        mapArtist.graphics.add(new Graphic(new Point(coorLong, coorLat, new SpatialReference({
-                            wkid: 4326
-                        })), pictureMarkerSymbol));
+                        let point = new Point(coorLong, coorLat, new SpatialReference({wkid: 4326}));
+
+                        let content = {
+                            title: "Evento",
+                            content: "Buenas tardes"
+                        };
+                        let popup = new InfoTemplate(content);
+
+                        let graphic = new Graphic(point, pictureMarkerSymbol);
+                        graphic.setInfoTemplate(popup);
+                        mapArtist.graphics.add(graphic);
+
+
                     }
                 });
 

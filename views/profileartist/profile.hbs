@@ -3,12 +3,16 @@
     <a class="btn btn-success mb-3" href="/events/create">Nuevo evento</a>
 </div>
 
-{{# each events as |event| }} 
-    {{> profileartist/detailevent event=event user=../user }}
-{{/each }}
+<div style="display: flex; justify-content:space-around; width:100%">
+    <div id="events" class="events">
+        {{# each events as |event| }} 
+            {{> profileartist/detailevent event=event user=../user }}
+        {{/each }}
+    </div>
 
-<div id="mapArtist">
-    <div id="searchArtist"></div>
+    <div id="mapArtist">
+        <div id="searchArtist"></div>
+    </div>
 </div>
 
 <script src="/javascripts/showMapArtist.js"></script>

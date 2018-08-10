@@ -1,15 +1,38 @@
 body {
   /* padding: 50px; */
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  widows: 100%;
 }
 
-      #search {
-        display: block;
-        position: absolute;
-        z-index: 2;
-        top: 20px;
-        left: 74px;
-      }
+#mapArtist, #mapUser, #mapEvents {
+  /* height: 70%; */
+  height: 600px;
+  width: 50%;
+  margin: 0;
+  padding: 0;
+}
+
+#searchArtist,
+#searchUser,
+#searchEvents {
+  display: block;
+  position: relative;
+  z-index: 2;
+  top: 60px;
+  left: 74px;
+}
+
+.events {
+  padding-top: 30px;
+}
+
+#search {
+  display: block;
+  position: relative;
+  z-index: 2;
+  top: 60px;
+  left: 74px;
+}
 
 a {
   color: #00B7FF;

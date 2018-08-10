@@ -28,7 +28,7 @@
             "dojo/domReady!"
         ],
         function (Map, Search, webMercatorUtils, SpatialReference, SimpleMarkerSymbol, Graphic, Color, Point, on) {
-            const map2 = new Map("map", {
+            const map2 = new Map("mapUser", {
                 basemap: "gray",
                 center: [-3.435, 40], // lon, lat
                 zoom: 7
@@ -36,7 +36,7 @@
 
             const search = new Search({
                 map: map2
-            }, "search");
+            }, "searchUser");
             search.startup();
 
             let lats = document.getElementsByName('lat1');

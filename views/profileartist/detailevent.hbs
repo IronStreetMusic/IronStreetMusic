@@ -1,5 +1,5 @@
 
-<div class="card mb-4">
+<div class="card mb-4" onmouseover="overEvent(evt)">
     <div class="card-body">
         <h5 class="card-title">
             {{ event.name }} - {{ user.name }}
@@ -7,14 +7,14 @@
 
         <input type="number" style="display:none" id="long1" name="long1" value={{ event.location.coordinates.[0] }}>
         <input type="number" style="display:none" name="lat1" value={{ event.location.coordinates.[1] }}>
-        {{!-- <p>{{ event.kind }} {{!--</p> --}}
+        {{!-- <p>{{ event.kind }} </p> --}}
 
         {{!-- Esto sólo se mostraría para usuarios --}}
         <div style="display: flex; justify-content: flex-start;" >
             {{#if user.kind }}
 
             {{else }}
-                <form action="/event/{{ event._id }}/update" method="post">
+                <form action="/events/{{ event._id }}/update" method="post">
                     <button type="submit" class="btn btn-sm btn-outline-success" data-confirm="Are you sure?">
                         Asistir
                     </button>
@@ -40,4 +40,3 @@
 
     </div>
 </div>
-

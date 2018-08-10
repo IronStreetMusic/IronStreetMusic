@@ -10,7 +10,7 @@
         "dojo/domReady!"
     ], function (Map, Search, webMercatorUtils, on) {
         const map = new Map("mapEvents", {
-            basemap: "gray",
+            basemap: "streets-night-vector",
             center: [-120.435, 46.159], // lon, lat
             zoom: 7
         });

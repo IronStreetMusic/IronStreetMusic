@@ -1,4 +1,26 @@
 
+<div style="display:flex; justify-content:flex-start; width: 100%;">
+    <div class="btn-group">
+        <button type="button" class="btn btn-success">Apple</button>
+        <button type="button" class="btn btn-success">Samsung</button>
+        <div class="btn-group">
+            <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+                Sony
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+                <li>
+                    <a href="#">Tablet</a>
+                </li>
+                <li>
+                    <a href="#">Smartphone</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
 <div style="display:flex; justify-content:space-around; width:100%">
     <div class="events">
         {{#each events as |event|}} 

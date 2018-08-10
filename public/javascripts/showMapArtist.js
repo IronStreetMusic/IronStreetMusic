@@ -16,6 +16,7 @@
                 "dojo/domReady!"
             ],
             function (Map, Search, webMercatorUtils, SpatialReference, SimpleMarkerSymbol, Graphic, Color, Point, on) {
+                
                 const mapArtist = new Map("mapArtist", {
                     basemap: "gray",
                     center: [-3.435, 40], // lon, lat

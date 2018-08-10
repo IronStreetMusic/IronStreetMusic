@@ -4,7 +4,9 @@
         <h5 class="card-title">
             {{ event.name }} - {{ user.name }}
         </h5>
-
+        <div style="display:none" name="eventName">{{  event.name }}</div>
+        <div style="display:none" name="date" >{{ event.date }}</div>
+        <div style="display:none" name="address">{{ event.street }}</div>
         <input type="number" style="display:none" id="long1" name="long1" value={{ event.location.coordinates.[0] }}>
         <input type="number" style="display:none" name="lat1" value={{ event.location.coordinates.[1] }}>
         {{!-- <p>{{ event.kind }} </p> --}}

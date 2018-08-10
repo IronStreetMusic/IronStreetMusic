@@ -4,7 +4,7 @@ body {
   widows: 100%;
 }
 
-#mapArtist, #mapUser {
+#mapArtist, #mapUser, #mapEvents {
   /* height: 70%; */
   height: 600px;
   width: 50%;
@@ -12,7 +12,9 @@ body {
   padding: 0;
 }
 
-#searchArtist, #searchUser {
+#searchArtist,
+#searchUser,
+#searchEvents {
   display: block;
   position: relative;
   z-index: 2;
@@ -24,13 +26,13 @@ body {
   padding-top: 30px;
 }
 
-      #search {
-        display: block;
-        position: relative;
-        z-index: 2;
-        top: 60px;
-        left: 74px;
-      }
+#search {
+  display: block;
+  position: relative;
+  z-index: 2;
+  top: 60px;
+  left: 74px;
+}
 
 a {
   color: #00B7FF;

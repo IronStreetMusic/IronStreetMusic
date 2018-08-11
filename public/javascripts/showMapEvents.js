@@ -11,7 +11,7 @@
     ], function (Map, Search, webMercatorUtils, on) {
         const map = new Map("mapEvents", {
             basemap: "streets-night-vector",
-            center: [-120.435, 46.159], // lon, lat
+            center: [-3.435, 40], // lon, lat
             zoom: 7
         });
 

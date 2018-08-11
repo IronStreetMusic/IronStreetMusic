@@ -8,11 +8,13 @@ module.exports.create = (req, res, next) => {
     let styles = req.session.currentUser.stylePreferences;
     //console.log("Preferencias del usuario Rock: " + styles)
 
-    Event.find({
-        musicStyles: {
-            $all: [ styles ]
-        }
-    })
+    Event.find(
+        // {
+        // musicStyles: {
+        //     $all: [ styles ]
+        // }
+    // }
+    )
         .then(events => {
             //console.log("EVentos rock: "+ events)
             let myUser = req.session.currentUser;

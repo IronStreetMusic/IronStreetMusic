@@ -27,6 +27,11 @@
                 <div><h6> {{ event.totalSpectator }} / {{ event.maxSpectators }} </h6></div>
             </div>
         </div>
+
+        <div style="display:flex; justify-content: flex-start;">
+            <h3>{{ event.musicStyles.[0] }}</h3>
+            <h3>{{ event.mussicStyles.[1] }}</h3>
+        </div>
        
         {{!-- Edit and buttons in profile artist --}}
         {{#if user.kind }}

@@ -2,7 +2,7 @@
 <div class="card mb-4" onmouseover="overEvent(evt)">
     <div class="card-body">
         <h5 class="card-title">
-            {{ event.name }} - {{ user.name }}
+            {{ event.name }}
         </h5>
         <div style="display:none" name="eventName">{{  event.name }}</div>
         <div style="display:none" name="date" >{{ event.date }}</div>
@@ -29,8 +29,7 @@
         </div>
 
         <div style="display:flex; justify-content: flex-start;">
-            <h3>{{ event.musicStyles.[0] }}</h3>
-            <h3>{{ event.mussicStyles.[1] }}</h3>
+            <h6>{{ event.musicStyles.[0] }} - {{ event.musicStyles.[1] }}</h6>
         </div>
        
         {{!-- Edit and buttons in profile artist --}}
